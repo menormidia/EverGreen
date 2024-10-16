@@ -1,1 +1,14 @@
 C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\bin\Debug\SistemaEstoqueLogin.exe
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\bin\Debug\SistemaEstoqueLogin.exe.config
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\bin\Debug\SistemaEstoqueLogin.pdb
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.csproj.AssemblyReference.cache
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.TelaCronograma.resources
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.TelaLogin.resources
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaApresentacao.TelaHome.resources
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.Properties.Resources.resources
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.TelaClientes.resources
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.TelaPedidos.resources
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.csproj.GenerateResource.cache
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.csproj.CoreCompileInputs.cache
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.exe
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.pdb

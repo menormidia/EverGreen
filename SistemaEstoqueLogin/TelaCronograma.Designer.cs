@@ -1,7 +1,23 @@
-﻿namespace SistemaEstoqueLogin
+﻿using SistemaApresentacao;
+using System;
+
+namespace SistemaEstoqueLogin
 {
     partial class TelaCronograma
     {
+        private System.Windows.Forms.CheckedListBox clbCronograma;
+        private System.Windows.Forms.Label txtCronograma;
+        private System.Windows.Forms.DateTimePicker dtpAteCronograma;
+        private System.Windows.Forms.DateTimePicker dtpDeCronograma;
+        private System.Windows.Forms.Label lblAteCronograma;
+        private System.Windows.Forms.Label lblDeCronograma;
+        private System.Windows.Forms.Button btnPesquisarTarefa;
+        private System.Windows.Forms.Button btnNovaTarefa;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuHome;
+        private System.Windows.Forms.ToolStripMenuItem menuPedidos;
+        private System.Windows.Forms.ToolStripMenuItem menuCronograma;
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -20,12 +36,6 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.clbCronograma = new System.Windows.Forms.CheckedListBox();
@@ -174,17 +184,80 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuHome = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPedidos = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCronograma = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuHome,
+            this.menuPedidos,
+            this.menuCronograma});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuHome
+            // 
+            this.menuHome.Name = "menuHome";
+            this.menuHome.Size = new System.Drawing.Size(52, 20);
+            this.menuHome.Text = "Home";
+            this.menuHome.Click += new System.EventHandler(this.menuHome_Click);
+            // 
+            // menuPedidos
+            // 
+            this.menuPedidos.Name = "menuPedidos";
+            this.menuPedidos.Size = new System.Drawing.Size(61, 20);
+            this.menuPedidos.Text = "Pedidos";
+            this.menuPedidos.Click += new System.EventHandler(this.menuPedidos_Click);
+            // 
+            // menuCronograma
+            // 
+            this.menuCronograma.Name = "menuCronograma";
+            this.menuCronograma.Size = new System.Drawing.Size(12, 20);
+            // 
+            // TelaCronograma
+            // 
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.menuStrip1);
+            this.Name = "TelaCronograma";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
-        #endregion
+        // Event handlers to switch between forms
+        private void menuHome_Click(object sender, EventArgs e)
+        {
+            // Voltar para a TelaHome
+            TelaHome telaHome = new TelaHome();
+            telaHome.Show();
+            this.Close();  // Fecha a TelaClientes
+        }
 
-        private System.Windows.Forms.CheckedListBox clbCronograma;
-        private System.Windows.Forms.Label txtCronograma;
-        private System.Windows.Forms.DateTimePicker dtpAteCronograma;
-        private System.Windows.Forms.DateTimePicker dtpDeCronograma;
-        private System.Windows.Forms.Label lblAteCronograma;
-        private System.Windows.Forms.Label lblDeCronograma;
-        private System.Windows.Forms.Button btnPesquisarTarefa;
-        private System.Windows.Forms.Button btnNovaTarefa;
+        private void menuPedidos_Click(object sender, EventArgs e)
+        {
+            // Navegar para a TelaPedidos
+            TelaPedidos telaPedidos = new TelaPedidos();
+            telaPedidos.Show();
+            this.Close();  // Fecha a TelaClientes
+        }
+
+        private void menuClientes_Click(object sender, EventArgs e)
+        {
+            // Navegar para a TelaPedidos
+            TelaPedidos telaPedidos = new TelaPedidos();
+            telaPedidos.Show();
+            this.Close();  // Fecha a TelaClientes
+        }
+
     }
 }

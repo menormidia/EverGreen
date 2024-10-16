@@ -1,7 +1,27 @@
-﻿namespace SistemaEstoqueLogin
+﻿using SistemaApresentacao;
+using System;
+
+namespace SistemaEstoqueLogin
 {
     partial class TelaPedidos
     {
+        private System.Windows.Forms.DataGridView dgvPedidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmailCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TelefoneCliente;
+        private System.Windows.Forms.Label txtPedidos;
+        private System.Windows.Forms.Button btnPesquisarPedido;
+        private System.Windows.Forms.Button btnNovoPedido;
+        private System.Windows.Forms.DateTimePicker dtpAtePedidos;
+        private System.Windows.Forms.DateTimePicker dtpDePedidos;
+        private System.Windows.Forms.Label lblAtePedidos;
+        private System.Windows.Forms.Label lblDePedidos;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuHome;
+        private System.Windows.Forms.ToolStripMenuItem menuPedidos;
+        private System.Windows.Forms.ToolStripMenuItem menuCronograma;
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -185,21 +205,80 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuHome = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPedidos = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCronograma = new System.Windows.Forms.ToolStripMenuItem();
+            this.SuspendLayout();
+
+            // 
+            // MenuStrip
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuHome,
+            this.menuPedidos,
+            this.menuCronograma});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            this.Controls.Add(this.menuStrip1);
+
+            // 
+            // menuHome
+            // 
+            this.menuHome.Name = "menuHome";
+            this.menuHome.Size = new System.Drawing.Size(52, 20);
+            this.menuHome.Text = "Home";
+            this.menuHome.Click += new System.EventHandler(this.menuHome_Click);
+
+            // 
+            // menuClientes
+            // 
+            this.menuPedidos.Name = "menuClientes";
+            this.menuPedidos.Size = new System.Drawing.Size(61, 20);
+            this.menuPedidos.Text = "Clientes";
+            this.menuPedidos.Click += new System.EventHandler(this.menuClientes_Click);
+
+            // 
+            // menuCronograma
+            // 
+            this.menuCronograma.Name = "menuCronograma";
+            this.menuCronograma.Size = new System.Drawing.Size(87, 20);
+            this.menuCronograma.Text = "Cronograma";
+            this.menuCronograma.Click += new System.EventHandler(this.menuCronograma_Click);
+
+
+        }
+
+        // Event handlers to switch between forms
+        private void menuHome_Click(object sender, EventArgs e)
+        {
+            // Voltar para a TelaHome
+            TelaHome telaHome = new TelaHome();
+            telaHome.Show();
+            this.Close();  // Fecha a TelaClientes
+        }
+
+        private void menuClientes_Click(object sender, EventArgs e)
+        {
+            // Navegar para a TelaPedidos
+            TelaPedidos telaPedidos = new TelaPedidos();
+            telaPedidos.Show();
+            this.Close();  // Fecha a TelaClientes
+        }
+
+        private void menuCronograma_Click(object sender, EventArgs e)
+        {
+            // Navegar para a TelaCronograma
+            TelaCronograma telaCronograma = new TelaCronograma();
+            telaCronograma.Show();
+            this.Close();  // Fecha a TelaClientes
+
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvPedidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmailCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TelefoneCliente;
-        private System.Windows.Forms.Label txtPedidos;
-        private System.Windows.Forms.Button btnPesquisarPedido;
-        private System.Windows.Forms.Button btnNovoPedido;
-        private System.Windows.Forms.DateTimePicker dtpAtePedidos;
-        private System.Windows.Forms.DateTimePicker dtpDePedidos;
-        private System.Windows.Forms.Label lblAtePedidos;
-        private System.Windows.Forms.Label lblDePedidos;
     }
 }
