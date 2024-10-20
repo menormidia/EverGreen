@@ -1,10 +1,8 @@
-﻿using System;
+﻿using SistemaEstoqueLogin.Forms.Pedidos.Adicionar_Pedidos;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace SistemaEstoqueLogin
 {
@@ -90,7 +88,7 @@ namespace SistemaEstoqueLogin
             return produtos;
         }
 
-        // Função BuscarPedidos (semelhante à BuscarClientes)
+        // Função BuscarPedidos
         public static List<Pedido> BuscarPedidos(string filtro)
         {
             List<Pedido> pedidos = new List<Pedido>();
@@ -137,6 +135,61 @@ namespace SistemaEstoqueLogin
             }
 
             return pedidos;
+        }
+
+        public static int InserirPedido(Pedido pedido)
+        {
+            int pedidoId = 0;
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-5R7M76S;Initial Catalog=SistemaEstoque;Integrated Security=True;TrustServerCertificate=True"))
+            {
+                connection.Open();
+
+                // Usando transação para garantir que tanto o pedido quanto os itens sejam inseridos corretamente
+                SqlTransaction transaction = connection.BeginTransaction();
+
+                try
+                {
+                    // Insere o pedido e retorna o ID gerado
+                    string queryPedido = "INSERT INTO Pedidos (DataEntrada, CnpjCpf, Observacoes) OUTPUT INSERTED.PedidoId VALUES (@DataEntrada, @CnpjCpf, @Observacoes)";
+                    using (SqlCommand cmd = new SqlCommand(queryPedido, connection, transaction))
+                    {
+                        cmd.Parameters.AddWithValue("@IdCliente", pedido.IdCliente);
+
+                        // Executa o comando e obtém o ID do pedido
+                        pedidoId = (int)cmd.ExecuteScalar();
+                    }
+
+                    // Agora insere os itens do pedido
+                    string queryItens = "INSERT INTO ItensPedido (PedidoId, Descricao, Quantidade, ValorUnitario) VALUES (@PedidoId, @Descricao, @Quantidade, @ValorUnitario)";
+                    foreach (var item in pedido.Produtos)
+                    {
+                        using (SqlCommand cmdItem = new SqlCommand(queryItens, connection, transaction))
+                        {
+                            cmdItem.Parameters.AddWithValue("@PedidoId", pedidoId);
+                            cmdItem.Parameters.AddWithValue("@Descricao", item.Descricao);
+                            cmdItem.Parameters.AddWithValue("@Quantidade", item.Quantidade);
+                            cmdItem.Parameters.AddWithValue("@ValorUnitario", item.valorUnitario);
+
+                            cmdItem.ExecuteNonQuery();
+                        }
+                    }
+
+                    // Confirma a transação
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    // Em caso de erro, reverte a transação
+                    transaction.Rollback();
+                    throw new Exception("Erro ao inserir o pedido no banco de dados", ex);
+                }
+            }
+            return pedidoId;
+        }
+
+        internal static int InserirPedido(NovoPedido.Pedido novoPedido)
+        {
+            throw new NotImplementedException();
         }
     }
 

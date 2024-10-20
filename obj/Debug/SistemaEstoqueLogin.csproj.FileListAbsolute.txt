@@ -14,3 +14,4 @@ C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debu
 C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.exe
 C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.pdb
 C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.TelaDetalhesPedidos.resources
+C:\Users\jao vitin\source\repos\SistemaEstoqueLogin\SistemaEstoqueLogin\obj\Debug\SistemaEstoqueLogin.Forms.Pedidos.Adicionar_Pedidos.NovoPedido.resources
