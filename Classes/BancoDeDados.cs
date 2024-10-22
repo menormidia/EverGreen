@@ -191,6 +191,30 @@ namespace SistemaEstoqueLogin
         {
             throw new NotImplementedException();
         }
+
+            public static void SalvarCliente(string cpf, string nome, string cep, string cidade, string uf, string endereco, string numero, string email, string telefone)
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = "INSERT INTO Clientes (Cpf, Nome, Cep, Cidade, Uf, Endereco, Numero, Email, Telefone) " +
+                                   "VALUES (@Cpf, @Nome, @Cep, @Cidade, @Uf, @Endereco, @Numero, @Email, @Telefone)";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Cpf", cpf);
+                    cmd.Parameters.AddWithValue("@Nome", nome);
+                    cmd.Parameters.AddWithValue("@Cep", cep);
+                    cmd.Parameters.AddWithValue("@Cidade", cidade);
+                    cmd.Parameters.AddWithValue("@Uf", uf);
+                    cmd.Parameters.AddWithValue("@Endereco", endereco);
+                    cmd.Parameters.AddWithValue("@Numero", numero);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Telefone", telefone);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
     }
 
 }

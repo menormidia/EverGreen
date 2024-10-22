@@ -33,6 +33,9 @@
             this.lbldigiteIdProduto = new System.Windows.Forms.Label();
             this.txtidProduto = new System.Windows.Forms.TextBox();
             this.dgvNovoPedido = new System.Windows.Forms.DataGridView();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblItens = new System.Windows.Forms.Label();
             this.btnadicionarProduto = new System.Windows.Forms.Button();
             this.btnAdicionarPedido = new System.Windows.Forms.Button();
@@ -44,9 +47,6 @@
             this.lblDescricaoProduto = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNovoPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +104,24 @@
             this.dgvNovoPedido.Name = "dgvNovoPedido";
             this.dgvNovoPedido.Size = new System.Drawing.Size(496, 324);
             this.dgvNovoPedido.TabIndex = 4;
+            // 
+            // Descricao
+            // 
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ToolTipText = "String";
+            this.Descricao.Width = 260;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ToolTipText = "Integer";
+            // 
+            // valorUnitario
+            // 
+            this.valorUnitario.HeaderText = "Valor Unitário";
+            this.valorUnitario.Name = "valorUnitario";
             // 
             // lblItens
             // 
@@ -216,24 +234,6 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Digite o valor unitário:";
             // 
-            // Descricao
-            // 
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ToolTipText = "String";
-            this.Descricao.Width = 260;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ToolTipText = "Integer";
-            // 
-            // valorUnitario
-            // 
-            this.valorUnitario.HeaderText = "Valor Unitário";
-            this.valorUnitario.Name = "valorUnitario";
-            // 
             // NovoPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +257,7 @@
             this.Controls.Add(this.txtidCliente);
             this.Name = "NovoPedido";
             this.Text = "Novo Pedido";
+            this.Load += new System.EventHandler(this.NovoPedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNovoPedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

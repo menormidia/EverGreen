@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,7 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,28 +57,40 @@
     <Compile Include="Classes\Clientes.cs" />
     <Compile Include="Classes\Pedido.cs" />
     <Compile Include="Classes\Produto.cs" />
-    <Compile Include="Forms\TelaCronograma.cs">
+    <Compile Include="Forms\Clientes\NovoCliente\NovoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TelaCronograma.Designer.cs">
+    <Compile Include="Forms\Clientes\NovoCliente\NovoCliente.Designer.cs">
+      <DependentUpon>NovoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cronograma\TelaCronograma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cronograma\TelaCronograma.Designer.cs">
       <DependentUpon>TelaCronograma.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pedidos\TelaDetalhesPedidos.cs">
+    <Compile Include="Forms\Pedidos\Novo Pedido\NovoPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Pedidos\TelaDetalhesPedidos.Designer.cs">
+    <Compile Include="Forms\Pedidos\Novo Pedido\NovoPedido.Designer.cs">
+      <DependentUpon>NovoPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pedidos\Detalhes do pedido\TelaDetalhesPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pedidos\Detalhes do pedido\TelaDetalhesPedidos.Designer.cs">
       <DependentUpon>TelaDetalhesPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TelaLogin.cs">
+    <Compile Include="Forms\Login\TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TelaLogin.Designer.cs">
+    <Compile Include="Forms\Login\TelaLogin.Designer.cs">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TelaHome.cs">
+    <Compile Include="Forms\Home\TelaHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TelaHome.Designer.cs">
+    <Compile Include="Forms\Home\TelaHome.Designer.cs">
       <DependentUpon>TelaHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Program.cs" />
@@ -88,28 +106,34 @@
     <Compile Include="Forms\Clientes\TelaClientes.Designer.cs">
       <DependentUpon>TelaClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pedidos\TelaPedidos.cs">
+    <Compile Include="Forms\Pedidos\Pedidos\TelaPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Pedidos\TelaPedidos.Designer.cs">
+    <Compile Include="Forms\Pedidos\Pedidos\TelaPedidos.Designer.cs">
       <DependentUpon>TelaPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TelaRelatorios.cs">
+    <Compile Include="Forms\Relatorios\TelaRelatorios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TelaRelatorios.Designer.cs">
+    <Compile Include="Forms\Relatorios\TelaRelatorios.Designer.cs">
       <DependentUpon>TelaRelatorios.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\TelaCronograma.resx">
+    <EmbeddedResource Include="Forms\Clientes\NovoCliente\NovoCliente.resx">
+      <DependentUpon>NovoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cronograma\TelaCronograma.resx">
       <DependentUpon>TelaCronograma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pedidos\TelaDetalhesPedidos.resx">
+    <EmbeddedResource Include="Forms\Pedidos\Novo Pedido\NovoPedido.resx">
+      <DependentUpon>NovoPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pedidos\Detalhes do pedido\TelaDetalhesPedidos.resx">
       <DependentUpon>TelaDetalhesPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TelaLogin.resx">
+    <EmbeddedResource Include="Forms\Login\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TelaHome.resx">
+    <EmbeddedResource Include="Forms\Home\TelaHome.resx">
       <DependentUpon>TelaHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -124,10 +148,10 @@
     <EmbeddedResource Include="Forms\Clientes\TelaClientes.resx">
       <DependentUpon>TelaClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pedidos\TelaPedidos.resx">
+    <EmbeddedResource Include="Forms\Pedidos\Pedidos\TelaPedidos.resx">
       <DependentUpon>TelaPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TelaRelatorios.resx">
+    <EmbeddedResource Include="Forms\Relatorios\TelaRelatorios.resx">
       <DependentUpon>TelaRelatorios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AFDataAccessor.json" />
